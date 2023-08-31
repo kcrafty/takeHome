@@ -1,3 +1,5 @@
+const { LETTERS_ONLY_REGEX } = require("./constants");
+
 // ====================================  INSTRUCTIONS  ====================================
 // Please write a function that accepts a single string as input, and that returns a list of English words
 // that can be created using some combination of the letters in the input string.
@@ -38,6 +40,11 @@ const WORDS = ["good", "god", "dog", "goo", "do", "go"];
 // I think my solution in index.js without the prefix is the ideal solution in
 // any kind of production environment so that one gets the same name sans prefix.
 function naiveFindWordsFromLetters(inputStr) {
+  if (inputStr === "") return [];
+  if (!LETTERS_ONLY_REGEX.test(inputStr)) {
+    throw new Error("Input string must only contain letters");
+  }
+
   // We convert the inputString to lower case to match what's in WORDS.
   // I am making the assumption that WORDS contains all lowercase words.
   // I trust (user) input less than static data which should be formatted.

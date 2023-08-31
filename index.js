@@ -21,6 +21,7 @@
 //
 // ========================================================================================
 
+const { LETTERS_ONLY_REGEX } = require("./constants");
 const generateTrieFromWords = require("./generateTrieFromWords");
 
 // The WORDS array is defined in global scope so my function can access it.
@@ -29,6 +30,11 @@ const WORDS = ["good", "god", "dog", "goo", "do", "go"];
 // The function accepts a word list as an optional second parameter,
 //   defaulting to WORDS if one is not provided
 function findWordsFromLetters(inputStr, wordList = WORDS) {
+  if (inputStr === "") return new Set();
+  if (!LETTERS_ONLY_REGEX.test(inputStr)) {
+    throw new Error("Input string must only contain letters");
+  }
+
   // We convert the inputString to lower case to match what's in WORDS.
   // I am making the assumption that the wordList contains all lowercase words.
   // I trust (user) input less than static data which should be formatted.

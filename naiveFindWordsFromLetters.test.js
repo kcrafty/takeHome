@@ -35,4 +35,18 @@ describe("naiveFindWordsFromLetters", () => {
     expect(result1).toIncludeSameMembers(result2);
     expect(result1.length).toBe(result2.length);
   });
+
+  test("should throw error if passed malformed string input", () => {
+    const input = "412!#@3";
+    expect(() => {
+      naiveFindWordsFromLetters(input);
+    }).toThrow("Input string must only contain letters");
+  });
+
+  test("should return no words if passed empty string", () => {
+    const input = "";
+    const result = naiveFindWordsFromLetters(input);
+
+    expect(result.length).toBe(0);
+  });
 });

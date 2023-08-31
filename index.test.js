@@ -154,4 +154,18 @@ describe("findWordsFromLetters", () => {
 
     expect(result.size).toBe(expectedOutputSize);
   });
+
+  test("should throw error if passed malformed string input", () => {
+    const input = "412!#@3";
+    expect(() => {
+      findWordsFromLetters(input, wordlist["english/50"]);
+    }).toThrow("Input string must only contain letters");
+  });
+
+  test("should return no words if passed empty string", () => {
+    const input = "";
+    const result = findWordsFromLetters(input, wordlist["english/50"]);
+
+    expect(result.size).toBe(0);
+  });
 });
