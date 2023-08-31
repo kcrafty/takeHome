@@ -30,8 +30,10 @@ const WORDS = ["good", "god", "dog", "goo", "do", "go"];
 // The function accepts a word list as an optional second parameter,
 //   defaulting to WORDS if one is not provided
 function findWordsFromLetters(inputStr, wordList = WORDS) {
-  if (inputStr === "") return new Set();
+  // First we perform a bit of input validation
+  if (inputStr === "") return new Set(); // return empty set if empty string is passed
   if (!LETTERS_ONLY_REGEX.test(inputStr)) {
+    // throw error if string contains non-letters
     throw new Error("Input string must only contain letters");
   }
 

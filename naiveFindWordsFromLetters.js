@@ -40,8 +40,10 @@ const WORDS = ["good", "god", "dog", "goo", "do", "go"];
 // I think my solution in index.js without the prefix is the ideal solution in
 // any kind of production environment so that one gets the same name sans prefix.
 function naiveFindWordsFromLetters(inputStr) {
-  if (inputStr === "") return [];
+  // First we perform a bit of input validation
+  if (inputStr === "") return []; // First we perform a bit of input validation
   if (!LETTERS_ONLY_REGEX.test(inputStr)) {
+    // throw error if string contains non-letters
     throw new Error("Input string must only contain letters");
   }
 
