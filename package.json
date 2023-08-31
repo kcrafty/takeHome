@@ -1,5 +1,15 @@
 {
+  "jest": {
+    "setupFilesAfterEnv": [
+      "./testSetup.js"
+    ]
+  },
+  "scripts": {
+    "test": "jest"
+  },
   "dependencies": {
+    "jest": "^29.6.4",
+    "jest-extended": "^4.0.1",
     "wordlist-english": "^1.2.1"
   }
 }
