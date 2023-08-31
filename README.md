@@ -43,11 +43,11 @@ a word is a valid word, you can simply check for its presence in the array (e.g.
 - My function should only accept a single string as input with no other parameters, `WORDS` will be defined in a scope outside of but accessible to my function.
 - `WORDS.includes(word)` is the only way I should be checking if a word is valid.
 - I am not able to mutate or change the `WORDS` list in any way.
-- I'm assuming the word list and the input string are all in lowercase
+- I'm assuming WORDS contains all lowercase words
 
 ## Key assumptions made in findWordsFromLetters
 
 - My function can take an optional word list as a second parameter
 - I can mutate this word list however I see fit to optimize my function's performance
 - I can check if a word is valid in whatever manner I choose
-- I'm assuming the word list and the input string are all in lowercase
+- I'm assuming the word list contains all lowercase words
